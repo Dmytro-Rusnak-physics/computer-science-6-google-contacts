@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10172a">
+  <meta name="description" content="Інтерактивна гра з інформатики для 6 класу: електронна пошта, пересилання файлів, адресна книга та списки розсилки.">
+  <title>Поштова місія — інтерактивна гра</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Поштова місія — головна">
+        <span class="brand-icon">✉</span>
+        <span>ПОШТОВА<span class="brand-accent">МІСІЯ</span></span>
+      </a>
+      <div class="top-meta">
+        <span class="class-tag">ІНФОРМАТИКА · 6 КЛАС</span>
+        <div class="score-pill" title="Набрані бали"><span>★</span><b id="totalScore">0</b><small>/ 100</small></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="homeScreen">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> НАВЧАЛЬНА ГРА · 5 МІСІЙ</div>
+          <h1>Твоя пошта.<br><span>Твої правила.</span></h1>
+          <p class="hero-lead">Стань цифровим кур’єром! Навчися надсилати й отримувати листи, пересилати файли та керувати контактами.</p>
+          <button class="primary-btn" id="startBtn">Розпочати місію <span>→</span></button>
+          <div class="hero-note"><span>⌁</span> Працює на комп’ютері й телефоні · Без реальної пошти</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="mail-card">
+            <div class="mail-card-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mail-window">INBOX / 01</span></div>
+            <div class="envelope">✉</div>
+            <div class="mail-lines"><i></i><i></i><i></i></div>
+            <div class="mail-stamp">SENT<br>✓</div>
+          </div>
+          <div class="float-chip chip-a">📎  report.pdf</div>
+          <div class="float-chip chip-b">👥  Клас 6-А</div>
+          <div class="float-chip chip-c">↗  Відправлено!</div>
+        </div>
+        <div class="hero-bottom"><span>01 / 05</span><span>ОБИРАЙ ЗАВДАННЯ ТА ЗБИРАЙ БАЛИ</span><span>SCROLL ↓</span></div>
+      </section>
+
+      <section class="mission-area" id="missionArea">
+        <div class="section-heading">
+          <div><div class="eyebrow">ЦЕНТР КЕРУВАННЯ</div><h2>П’ять кроків до<br>майстерності</h2></div>
+          <p>Виконуй місії по черзі або обирай потрібну тему. За правильні відповіді отримуй бали.</p>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>ЗАГАЛЬНИЙ ПРОГРЕС</span><b id="progressText">0 із 5 місій</b></div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+        </div>
+        <div class="mission-grid" id="missionGrid">
+          <button class="mission-card active" data-mission="0">
+            <span class="mission-index">МІСІЯ 01</span><span class="mission-icon">📨</span><strong>Надсилання<br>та отримання</strong><span class="mission-desc">Кому, тема, текст і папка «Вхідні»</span><span class="mission-footer">ПОЧАТИ <b>↗</b></span>
+          </button>
+          <button class="mission-card" data-mission="1">
+            <span class="mission-index">МІСІЯ 02</span><span class="mission-icon">↪️</span><strong>Перенаправлення<br>повідомлень</strong><span class="mission-desc">Відповідь, пересилання та копія</span><span class="mission-footer">ПОЧАТИ <b>↗</b></span>
+          </button>
+          <button class="mission-card" data-mission="2">
+            <span class="mission-index">МІСІЯ 03</span><span class="mission-icon">📎</span><strong>Пересилання<br>файлів</strong><span class="mission-desc">Вкладення, формат і безпека</span><span class="mission-footer">ПОЧАТИ <b>↗</b></span>
+          </button>
+          <button class="mission-card" data-mission="3">
+            <span class="mission-index">МІСІЯ 04</span><span class="mission-icon">📇</span><strong>Адресна<br>книга</strong><span class="mission-desc">Контакти та електронні адреси</span><span class="mission-footer">ПОЧАТИ <b>↗</b></span>
+          </button>
+          <button class="mission-card" data-mission="4">
+            <span class="mission-index">МІСІЯ 05</span><span class="mission-icon">👥</span><strong>Списки<br>розсилки</strong><span class="mission-desc">Групи отримувачів і прихована копія</span><span class="mission-footer">ПОЧАТИ <b>↗</b></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="game-panel hidden" id="gamePanel" aria-live="polite">
+        <div class="game-top">
+          <button class="back-btn" id="backBtn">← До місій</button>
+          <span class="game-kicker" id="gameKicker">МІСІЯ 01 / 05</span>
+          <span class="game-points">★ <b id="missionScore">0</b> балів</span>
+        </div>
+        <div class="game-content" id="gameContent"></div>
+      </section>
+    </main>
+    <footer><span>ПОШТОВА МІСІЯ</span><span>ВЧИСЯ · ПРАКТИКУЙ · ПЕРЕВІРЯЙ СЕБЕ</span><span>© 2026</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
